@@ -199,11 +199,14 @@ import (
 	"github.com/rakyll/statik/fs"
 )
 
-func init() {
-	data := "`, tags, comment, namePackage)
+func Data() string {
+	return "`, tags, comment, namePackage)
 	FprintZipData(&qb, buffer.Bytes())
 	fmt.Fprint(&qb, `"
-	fs.Register(data)
+}
+
+func init() {
+	fs.Register(Data())
 }
 `)
 
